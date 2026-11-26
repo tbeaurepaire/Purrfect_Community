@@ -138,8 +138,8 @@ function initCarousel() {
     }
 
    let carouselItemHTML = '<div class="carousel-item ' + activeClass + '">';
-	  carouselItemHTML += '<a href="' + item.link + '" target="_blank">';
-	carouselItemHTML += '<img src="' + item.src + '" class="d-block w-100 rounded" alt="' + item.alt + '" style="max-height: 300px; width: 100%; object-fit: contain; background-color: #f8f9fa;">';
+	carouselItemHTML += '<a href="' + item.link + '" target="_blank">';
+	carouselItemHTML += '<img src="' + item.src + '" class="d-block w-100 rounded" alt="Cat" style="max-height: 300px; width: 100%; object-fit: contain; background-color: #f8f9fa;">';
 	carouselItemHTML += '</a>';
 	carouselItemHTML += '</div>';
 
