@@ -268,16 +268,19 @@ h2 {
     background: var(--powder-puff);
     padding: 22px;
     border-radius: 12px;
-    margin-bottom: 15px;
+    height: 100%;
     box-shadow: 0 3px 8px rgba(61, 53, 66, .06);
 }
+
 .faq-card h3 {
     font-size: 21px;
     margin-bottom: 10px;
 }
+
 .faq-card p {
     margin-bottom: 0;
 }
+
 .faq-card a {
     color: var(--muted-purple);
     font-weight: bold;
