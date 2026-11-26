@@ -1,2 +1,2 @@
 # Purrfect_Community
-A little space for cat lovers 
+A little place for everyone who loves cats 
