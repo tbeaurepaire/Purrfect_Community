@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cat travel guide, interactive packing checklist and community contact form.">
+    <title>Purrfect Community | Travel Hub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/style.css">
+</head>
+
+<body>
+
+<header class="site-header text-center">
+    <div class="container">
+        <div class="brand-lockup">
+            <img src="../Pictures/logo.jpg" alt="Purrfect Community logo" class="site-logo">
+            <h1>Purrfect Community</h1>
+        </div>
+        <p class="tagline">A little place for everyone who loves cats</p>
+        <p class="slogan">Connect • Share • Care</p>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">Purrfect Community</a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainMenu"
+            aria-controls="mainMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fosteringAndCaring.html">Fostering & Caring</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="travelHub.html">Travel Hub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guessingGame.html">Guess the Breed</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container main-container">
+
+    <!-- INTRODUCTION -->
+    <section class="hero-section text-center">
+        <h2>Cat Travel Hub Across Ireland 🐾</h2>
+        <p>
+            Planning a trip around Ireland or travelling abroad with your cat?
+            Explore our transport guide, prepare your travel essentials
+            and connect with other cat lovers.
+        </p>
+    </section>
+
+    <!-- TRANSPORT GUIDE -->
+    <section class="find-cat-section">
+        <h2 class="text-center">1. Choose Your Transport Mode</h2>
+        <p class="text-center">
+            Select a transport option to discover useful travel tips.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap mb-4"
+             role="group" aria-label="Transport options">
+
+            <button type="button" class="btn travel-tab-btn active"
+                    id="btnCar" aria-pressed="true">
+                🚗 Car
+            </button>
+
+            <button type="button" class="btn travel-tab-btn"
+                    id="btnTrain" aria-pressed="false">
+                🚆 Train & Bus
+            </button>
+
+            <button type="button" class="btn travel-tab-btn"
+                    id="btnFlight" aria-pressed="false">
+                ✈️ Ferry & Flight
+            </button>
+        </div>
+
+        <article class="cat-card text-left-card" aria-live="polite">
+            <h3 id="modeTitle" class="text-center">
+                Travelling by Car Across Ireland 🚗
+            </h3>
+
+            <p id="modeDescription" class="text-center">
+                Keep your cat safe, secure and comfortable during car journeys.
+            </p>
+
+            <ul id="modeTipsList">
+                <li>Secure the carrier with a seatbelt on the back seat.</li>
+                <li>Never leave your cat alone in a parked car.</li>
+                <li>Plan safe stops and offer water when appropriate.</li>
+                <li>Ask your vet for advice about travel sickness.</li>
+            </ul>
+        </article>
+
+        <div class="text-center mt-4">
+            <a href="fosteringAndCaring.html#cat-friendly-places"
+               class="btn btn-custom">
+                🐾 Discover Cat-Friendly Places in Ireland
+            </a>
+        </div>
+    </section>
+
+    <!-- TRAVEL PHOTOS -->
+    <section class="cats-section">
+        <h2 class="section-title text-center">Travelling With Your Cat</h2>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <img src="../Pictures/cat-car.jpg"
+                     alt="A cat safely travelling in a car carrier"
+                     class="cat-image">
+                <p class="text-center mt-2">
+                    Safe and comfortable car journeys 🚗
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <img src="../Pictures/cat-plane.jpg"
+                     alt="A cat ready for an international journey"
+                     class="cat-image">
+                <p class="text-center mt-2">
+                    Preparing for international travel ✈️
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKING CHECKLIST -->
+    <section class="cats-section">
+        <h2 class="section-title text-center">
+            2. Interactive Cat Travel Checklist
+        </h2>
+
+        <p class="section-intro text-center">
+            Tick the items as you pack. Add your own essentials
+            and watch your progress bar fill up!
+        </p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="cat-card text-left-card">
+
+                    <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
+                        <strong>Packing readiness</strong>
+                        <span id="progressText" aria-live="polite">
+                            0 of 6 items packed
+                        </span>
+                    </div>
+
+                    <div class="progress custom-progress mb-4">
+                        <div id="packingProgress"
+                             class="progress-bar custom-progress-bar"
+                             role="progressbar"
+                             style="width: 0%"
+                             aria-valuenow="0"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
+
+                    <ul id="packingList" class="list-unstyled">
+
+                        <li class="checklist-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pack1">
+                                <label class="form-check-label" for="pack1">
+                                    Sturdy and well-ventilated pet carrier
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="checklist-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pack2">
+                                <label class="form-check-label" for="pack2">
+                                    Familiar blanket or favourite toy
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="checklist-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pack3">
+                                <label class="form-check-label" for="pack3">
+                                    Cat food, treats and fresh water
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="checklist-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pack4">
+                                <label class="form-check-label" for="pack4">
+                                    Travel bowls and portable litter supplies
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="checklist-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pack5">
+                                <label class="form-check-label" for="pack5">
+                                    Collar or harness with an ID tag
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="checklist-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pack6">
+                                <label class="form-check-label" for="pack6">
+                                    Vaccination records and travel documents
+                                </label>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="input-group mt-3">
+                        <input type="text" id="newItemInput"
+                               class="form-control"
+                               placeholder="Add another item..."
+                               aria-label="New packing item">
+
+                        <button class="btn btn-custom" type="button" id="addItemBtn">
+                            Add Item
+                        </button>
+                    </div>
+
+                    <p id="packingError" class="form-note mt-2" role="status"></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM AT THE BOTTOM -->
+    <section class="cats-section" id="community-form">
+
+        <h2 class="section-title text-center">
+            3. Connect With Purrfect Community
+        </h2>
+
+        <p class="section-intro text-center">
+            Need travel advice, looking for a cat sitter or interested
+            in fostering? Send us a community request.
+            Fields marked * are required.
+        </p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="cat-card text-left-card">
+
+                    <form id="contactForm" novalidate>
+
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">
+                                Full Name *
+                            </label>
+                            <input type="text" class="form-control"
+                                   id="fullName" minlength="2" required>
+                            <div class="invalid-feedback">
+                                Please enter at least 2 characters.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                Email Address *
+                            </label>
+                            <input type="email" class="form-control"
+                                   id="email" placeholder="example@email.ie" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="county" class="form-label">
+                                County in Ireland *
+                            </label>
+                            <select class="form-select" id="county" required>
+                                <option value="">Select your county</option>
+                                <option>Dublin</option>
+                                <option>Cork</option>
+                                <option>Galway</option>
+                                <option>Limerick</option>
+                                <option>Waterford</option>
+                                <option>Kilkenny</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a county.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="category" class="form-label">
+                                How Can We Help? *
+                            </label>
+                            <select class="form-select" id="category" required>
+                                <option value="">Select a topic</option>
+                                <option value="Travelling with Cats">Travelling with Cats</option>
+                                <option value="Cat Sitting">Cat Sitting</option>
+                                <option value="Fostering">Fostering</option>
+                                <option value="Cat-Friendly Places">Cat-Friendly Places</option>
+                                <option value="Membership">Join Purrfect Community</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a category.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">
+                                Your Message *
+                            </label>
+                            <textarea class="form-control" id="message"
+                                      rows="4" minlength="10" required
+                                      placeholder="Tell us how we can help..."></textarea>
+                            <div class="invalid-feedback">
+                                Please enter at least 10 characters.
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox"
+                                   id="privacy" required>
+                            <label class="form-check-label" for="privacy">
+                                I agree to the use of my information to respond to my request. *
+                            </label>
+                            <div class="invalid-feedback">
+                                Please confirm before submitting.
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-custom">
+                                Send Message
+                            </button>
+
+                            <button type="reset" class="btn btn-secondary rounded-pill px-4">
+                                Clear Form
+                            </button>
+                        </div>
+
+                        <div id="successMessage"
+                             class="alert alert-success mt-4 text-center d-none"
+                             role="status">
+                            <h4>Thank You! 🐾</h4>
+                            <p id="successText" class="mb-0"></p>
+                        </div>
+
+                        <p class="small text-muted mt-3 mb-0">
+                            Demo form: your message is not sent or stored.
+                            This confirmation is shown in your browser only.
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="custom-footer text-center">
+    <p><strong>Purrfect Community</strong></p>
+    <p>Connect • Share • Care</p>
+    <p>A little place across Ireland for everyone who loves cats.</p>
+    <p class="mb-0">&copy; 2026 Purrfect Community. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Scripts/travelHub.js"></script>
+
+</body>
+</html>
