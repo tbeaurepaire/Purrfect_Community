@@ -49,8 +49,8 @@ h2 {
     flex-wrap: wrap;
 }
 .site-logo {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
     border-radius: 50%;
 }
@@ -356,7 +356,7 @@ header {
     text-align: center;
     border-bottom: 2px solid #d1b3e0;
 }
-*/
+
 .logo-img {
     width: 120px;       
     height: 120px;      
@@ -364,7 +364,7 @@ header {
     border-radius: 50%; 
     border: 2px solid #9c27b0; 
 }
-
+*/
 
 
 .site-title {
