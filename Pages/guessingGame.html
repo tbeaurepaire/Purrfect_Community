@@ -75,15 +75,31 @@
         <button class="btn btn-outline-secondary" onclick="nextImage()">Next ❯</button>
       </div>
 
+         <!-- Difficulty Selector -->
+      <div class="mb-3" style="max-width: 300px; margin: 0 auto;">
+        <label for="difficultySelect" class="form-label fw-bold">Choose Winning Target:</label>
+        <select id="difficultySelect" class="form-select" onchange="changeDifficulty()">
+          <option value="3">Easy (3 Wins)</option>
+          <option value="5" selected>Medium (5 Wins)</option>
+          <option value="10">Hard (10 Wins)</option>
+          <option value="20">Expert (All 20 Wins)</option>
+        </select>
+      </div>
+
       <!-- Guess Input Group -->
       <div class="input-group mb-3" style="max-width: 500px; margin: 0 auto;">
         <input type="text" id="guessInput" class="form-control" placeholder="Enter your guess...">
         <button class="btn btn-primary" onclick="checkGuess()">Submit</button>
       </div>
             
+      <!-- Score Display and Restart Button -->
+      <p id="scoreDisplay" class="fs-5 mb-2 fw-bold">Score: <span id="score">0</span> / <span id="targetDisplay">5</span></p>
+      <button id="restartBtn" class="btn btn-success mb-3" style="display: none;" onclick="restartGame()">Play Again</button>
+
       <p id="resultMessage" class="fw-bold mt-2"></p>
-    
-     </div>
+      
+     
+    </div>
   </section>
 
  
