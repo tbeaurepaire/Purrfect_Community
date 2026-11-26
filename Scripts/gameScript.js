@@ -1,3 +1,23 @@
+
+let score = 0;
+let targetScore = 5; // Default target
+let answeredCorrectly = {}; //not scoring multiple on same cat
+
+// Array of valid difficulty targets
+const availableTargets = [3, 5, 10, 20];
+
+function changeDifficulty() {
+  let selectBox = document.getElementById("difficultySelect");
+  let chosenValue = parseInt(selectBox.value);
+
+  // Check if the chosen value is valid using our array
+  if (availableTargets.includes(chosenValue)) {
+    targetScore = chosenValue;
+    document.getElementById("targetDisplay").textContent = targetScore;
+    restartGame(); // Reset game when difficulty changes
+  }
+}
+
 // Array holding the pictures, answers, links and alt for guessing without Pictures
 let gameData = [
  { 
@@ -136,12 +156,11 @@ function initCarousel() {
     if (index === 0) {
       activeClass = "active";
     }
-
-   let carouselItemHTML = '<div class="carousel-item ' + activeClass + '">';
-	carouselItemHTML += '<a "title="want to know more - click here?" href="' + item.link + '" target="_blank">';
-	carouselItemHTML += '<img src="' + item.src + '" class="d-block w-100 rounded" alt="Cat" style="max-height: 300px; width: 100%; object-fit: contain; background-color: #f8f9fa;">';
-	carouselItemHTML += '</a>';
-	carouselItemHTML += '</div>';
+		let carouselItemHTML = '<div class="carousel-item ' + activeClass + '">';
+		carouselItemHTML += '<a href="' + item.link + '" target="_blank" title="For a cheat sheet (more information), click here">';
+		carouselItemHTML += '<img src="' + item.src + '" class="d-block w-100 rounded" alt="Cat" style="max-height: 300px; width: 100%; object-fit: contain; background-color: #f8f9fa;">';
+		carouselItemHTML += '</a>';
+		carouselItemHTML += '</div>';
 
     carouselInner.innerHTML += carouselItemHTML;
   });
@@ -192,7 +211,6 @@ function prevImage() {
   carouselInstance.to(currentIndex);
 }
 
-// Function to check the user's guess
 function checkGuess() {
   let guessBox = document.getElementById("guessInput");
   let userGuess = guessBox.value.trim().toLowerCase();
@@ -205,14 +223,42 @@ function checkGuess() {
     return;
   }
 
+  if (answeredCorrectly[currentIndex]) {
+    messageElement.style.color = "orange";
+    messageElement.textContent = "You already scored points for this cat! Try the next one.";
+    return;
+  }
+
   if (userGuess === correctAnswer) {
-    messageElement.style.color = "green";
-    messageElement.textContent = "Correct! 🎉";
+    answeredCorrectly[currentIndex] = true;
+    score++;
+    document.getElementById("score").textContent = score;
+
+    if (score >= targetScore) {
+      messageElement.style.color = "green";
+      messageElement.textContent = `Congratulations! You reached ${targetScore} correct guesses and won! 🎉`;
+      guessBox.disabled = true;
+      document.getElementById("restartBtn").style.display = "inline-block";
+    } else {
+      messageElement.style.color = "green";
+      messageElement.textContent = "Correct! 🎉 Moving to the next cat...";
+      setTimeout(nextImage, 1500);
+    }
   } else {
     messageElement.style.color = "red";
     messageElement.textContent = "Incorrect, try again!";
   }
 }
-
+function restartGame() {
+  score = 0;
+  answeredCorrectly = {};
+  document.getElementById("score").textContent = score;
+  document.getElementById("targetDisplay").textContent = targetScore;
+  document.getElementById("guessInput").disabled = false;
+  document.getElementById("restartBtn").style.display = "none";
+  currentIndex = 0;
+  carouselInstance.to(currentIndex);
+  updateDescription();
+}
 // initialization when window loads
 window.onload = initCarousel;
