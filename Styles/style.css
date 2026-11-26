@@ -11,7 +11,7 @@
     --warm-taupe: #a98270;
     --dark-text: #3d3542;
     --white: #fff;
-    --main-font: Garamond, Georgia, serif;
+    --main-font: 'Nunito', sans-serif;
 }
 * {
     box-sizing: border-box;
