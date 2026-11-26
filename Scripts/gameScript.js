@@ -1,7 +1,7 @@
 // Array holding the pictures, answers, links and alt for guessing without Pictures
 let gameData = [
  { 
-  src: "Pictures/abyssinian.jpg",
+  src: "..Pictures/abyssinian.jpg",
   answer: "Abyssinian", 
   alt: "Strikingly wild looking, this cat gives the impression of an extreme athlete who has just wandered in from the jungle. Lithe and long, with a lean, muscular build and moderately wedge-shaped head and large, almond shaped eyes...",
   link: "https://www.purina.co.uk/find-a-pet/cat-breeds/abyssinian" 
