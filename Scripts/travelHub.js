@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Thank you, " + name +
                     "! We have received your message about " +
                     category + " in " + county +
-                    ". Thank you for being part of our community! 🐾";
+                    ". <br/>Thank you for being part of our community! 🐾";
             }
 
             if (successMessage) {
